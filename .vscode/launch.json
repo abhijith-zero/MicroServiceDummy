@@ -1,0 +1,34 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-CompanyApplication<company>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.abhizer0.company.CompanyApplication",
+            "projectName": "company",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-DiscoveryApplication<discovery>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.abhizer0.discovery.DiscoveryApplication",
+            "projectName": "discovery",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-EmployeeApplication<employee>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.abhizer0.employee.EmployeeApplication",
+            "projectName": "employee",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
