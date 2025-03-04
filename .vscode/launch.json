@@ -8,7 +8,8 @@
             "mainClass": "com.abhizer0.company.CompanyApplication",
             "projectName": "company",
             "args": "",
-            "envFile": "${workspaceFolder}/.env"
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote"
         },
         {
             "type": "java",
@@ -18,7 +19,8 @@
             "mainClass": "com.abhizer0.discovery.DiscoveryApplication",
             "projectName": "discovery",
             "args": "",
-            "envFile": "${workspaceFolder}/.env"
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote"
         },
         {
             "type": "java",
@@ -27,6 +29,27 @@
             "cwd": "${workspaceFolder}",
             "mainClass": "com.abhizer0.employee.EmployeeApplication",
             "projectName": "employee",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ConfigServerApplication<configServer>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.abhizer0.configServer.ConfigServerApplication",
+            "projectName": "configServer",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-GatewayApplication<gateway>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.abhizer0.gateway.GatewayApplication",
+            "projectName": "gateway",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
         }

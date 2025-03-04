@@ -2,7 +2,10 @@ package com.abhizer0.company;
 
 
 import lombok.RequiredArgsConstructor;
+
 import org.springframework.stereotype.Service;
+
+import com.abhizer0.company.client.EmployeeClient;
 
 import java.util.List;
 
@@ -11,6 +14,10 @@ import java.util.List;
 public class CompanyService {
 
     private final CompanyRepository compRepo;
+    
+    
+    private final EmployeeClient empClient;
+
 
 
     public void saveCompany(Company company){
@@ -21,11 +28,23 @@ public class CompanyService {
         return compRepo.findAll();
     }
     public FullCompanyResponse findCompaniesWithEmployees(Integer companyId){
-        var schoocompanyl= compRepo.findById(companyId)
+        if (empClient == null) {
+            throw new IllegalStateException("EmployeeClient is not initialized!");
+        }
+        var company= compRepo.findById(companyId)
                 .orElse(
-                    Company.builder().
-                            build()
+                    Company.builder()
+                            .companyName("NOT_Found")
+                            .email("NOT_FOUND")
+                            .build()
                 );
+        var employees = empClient.findAllEmployeesByCompany(companyId);
+        return FullCompanyResponse.builder()
+        .companyName(company.getCompanyName())
+        .email(company.getEmail())
+        .employees(employees)
+        .build();
+
 
     }
 }

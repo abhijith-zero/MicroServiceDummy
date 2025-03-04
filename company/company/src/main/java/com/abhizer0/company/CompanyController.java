@@ -30,8 +30,9 @@ public class CompanyController {
         return ResponseEntity.ok((service.findAllCompanies()));
     }
    @GetMapping("with-employees/{company-id}")
-   public ResponseEntity<Company> findACompany(@PathVariable("company-id")Integer companyId){
-       return ResponseEntity.ok(service.findCompaniesWithEmployees(companyId));
+   public ResponseEntity<FullCompanyResponse> findACompany(@PathVariable("company-id")Integer companyId){
+
+    return ResponseEntity.ok(service.findCompaniesWithEmployees(companyId));
    }
 
 }

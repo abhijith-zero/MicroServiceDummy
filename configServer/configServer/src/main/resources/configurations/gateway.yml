@@ -1,0 +1,21 @@
+server:
+  port: 8222
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: employees
+          uri: http://localhost:8090
+          predicates:
+            - Path=/api/v1/employee/**
+        - id: company
+          uri: http://localhost:8070
+          predicates:
+            - Path=/api/v1/company/**
+management:
+  tracing:
+    sampling:
+      probability: 1.0
